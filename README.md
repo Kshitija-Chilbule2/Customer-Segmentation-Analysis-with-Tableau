@@ -68,3 +68,9 @@ The final Tableau dashboard provides an interactive and visually compelling repr
 
 ## Summary of Insights
 
+### 1️⃣ Customer Segmentation Breakdown
+
+<img width="757" height="292" alt="image" src="https://github.com/user-attachments/assets/b7e5ce7c-35ff-4a3c-8011-eba56ca40411" />
+
+As we already know, customers are segmented into five different categories: **Champions, Loyal Customers, Potential Loyalists, Promising, and At Risk.**
+
