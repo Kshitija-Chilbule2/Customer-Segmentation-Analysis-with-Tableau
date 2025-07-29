@@ -10,6 +10,7 @@
 - [Business Metrics Overview](#business-metrics-overview)
 - [Summary of Insights](#summary-of-insights)
 - [Recommended Retention Strategies](#recommended-retention-strategies)
+- [MySQL](#mysql)
 
 ## Background
 SpicyFood, a fictional FoodTech company, aims to strengthen its customer engagement and retention strategies by gaining a deeper understanding of customer behavior. With a growing user base and increasing competition, identifying high-value customers and tailoring marketing efforts accordingly has become a key business priority.
@@ -131,3 +132,28 @@ As we already know, customers are segmented into five different categories: **Ch
 - **Champions:** SpicyFood should enhance their loyalty by offering VIP programs, exclusive deals, and early access to new products.
 - **At-Risk Customers:** Implement reactivation campaigns with targeted discounts and reminders of past positive experiences to encourage repeat purchases.
 - **Promising Customers:** Build trust and engagement through personalized recommendations and welcome campaigns to nurture long-term relationships.
+
+## MySQL 
+```sql
+-- Total Customers
+SELECT COUNT(DISTINCT `Customer ID`) AS Total_Customers FROM spicyfood_data;
+
+-- Total Revenue
+SELECT SUM(`Bill Amount`) AS Total_Purchase FROM spicyfood_data;
+
+-- Orders Count
+SELECT SUM(`Purchase Frequency`) AS Number_of_Orders FROM spicyfood_data;
+
+-- Average Purchase
+SELECT ROUND(AVG(`Bill Amount`)) AS Avg_Purchase_Amount FROM spicyfood_data;
+
+-- Customers in 'Champions' Tier
+SELECT `Customer ID`, `Purchase Frequency`, `Bill Amount`
+FROM spicyfood_data 
+WHERE `Customer Tiers` = 'Champions';
+
+-- Gender-wise distribution by tier
+SELECT `Customer Tiers`, Gender, COUNT(*) AS Count
+FROM spicyfood_data
+GROUP BY `Customer Tiers`, Gender;
+```
